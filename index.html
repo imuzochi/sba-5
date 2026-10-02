@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Create and manage your personal blog posts.">
+	<title>Personal Blog</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header>
+		<h1>My Personal Blog</h1>
+		<p>Capture your thoughts and share your stories.</p>
+	</header>
+
+	<main>
+		<section aria-labelledby="form-heading">
+			<h2 id="form-heading">Create a post</h2>
+			<form id="post-form" novalidate>
+				<div>
+					<label for="post-title">Title</label>
+					<input id="post-title" name="title" type="text" required aria-describedby="title-error">
+					<span id="title-error" class="error" aria-live="polite"></span>
+				</div>
+				<div>
+					<label for="post-content">Content</label>
+					<textarea id="post-content" name="content" rows="6" required aria-describedby="content-error"></textarea>
+					<span id="content-error" class="error" aria-live="polite"></span>
+				</div>
+				<button type="submit">Publish post</button>
+				<button id="cancel-edit" type="button" hidden>Cancel edit</button>
+			</form>
+		</section>
+
+		<section aria-labelledby="posts-heading">
+			<h2 id="posts-heading">Posts</h2>
+			<div id="posts-list" aria-live="polite">
+				<!-- Posts are rendered dynamically by script.js. -->
+			</div>
+		</section>
+	</main>
+</body>
+</html>
